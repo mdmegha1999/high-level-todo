@@ -1,0 +1,82 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .parent {
+    justify-content: center;
+  
+    width: auto;
+  }
+  .add-btn {
+    cursor: pointer;
+    width: 30%;
+    height: 70px;
+    background-color: lightgoldenrodyellow;
+    border: none;
+    font-size: xx-large;
+  }
+  .add-todo-form {
+    position: absolute;
+    left: 30%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+    background-color: lightblue;
+    padding: 20px;
+    margin: auto;
+    z-index: 200;
+  }
+  input,
+  textarea,
+  select {
+    width: 60%;
+    padding: 5px;
+    text-align: left;
+  }
+  .create-btn {
+    padding: 10px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    width: 40%;
+    margin: 5px;
+    border: none;
+    border-radius: 12px 5px;
+  }
+  .task-div {
+    position: relative;
+    width: 30vw;
+    background-color: rgb(194, 221, 221);
+    padding: 20px;
+    margin: 2px;
+    z-index: 1;
+  }
+  .task-div:hover {
+    background-color: lightgreen;
+  }
+  .x-btn {
+    background-color: transparent;
+    border: none;
+    font-weight: 900;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+  }
+  .x-btn-2 {
+    display: none;
+    background-color: transparent;
+    border: none;
+    font-weight: 900;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    cursor: pointer;
+  }
+  .task-div:hover .x-btn-2 {
+    display: block;
+  }
+  
