@@ -14,9 +14,7 @@ function Todolist() {
       setaddBtn("none");
     }
   };
-  const editTask = () =>{
-
-  }
+  
 
   const title = useRef();
   const desc = useRef();
@@ -24,16 +22,17 @@ function Todolist() {
    
   const create = () => {
 
-    if (title.current.value == "") {
+    if (title.current.value === "") {
       alert("Pls add some title");
-    } else if (desc.current.value == "") {
+    } else if (desc.current.value === "") {
       alert("Pls add some Description");
-    } else if (status.current.value == "status") {
+    } else if (status.current.value === "status") {
       alert("Pls select a status");
     } else {
       setTask([
         ...task,
         {
+          id: title.current.value + task.length + 1,
           title: title.current.value,
           desc: desc.current.value,
           status: status.current.value
@@ -97,7 +96,7 @@ function Todolist() {
               .map((item, i) => (
                 <div key={i} className="task-div"> 
                 <button className="x-btn-2" onClick={(task) => deleteTask(item)}>X</button>
-                 <p onClick={(task) => editTask(item)}>{item.title} </p> 
+                 <p onClick={(task) => deleteTask(item)}>{item.title} </p> 
                    </div>
               ))}
           </div>
