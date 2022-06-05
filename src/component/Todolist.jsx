@@ -96,7 +96,7 @@ function Todolist() {
               .map((item, i) => (
                 <div key={i} className="task-div"> 
                 <button className="x-btn-2" onClick={(task) => deleteTask(item)}>X</button>
-                 
+                 {item.title}
                    </div>
               ))}
           </div>
