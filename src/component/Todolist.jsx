@@ -6,6 +6,7 @@ import './Todolist.css';
 function Todolist() {
   const [addBtn, setaddBtn] = useState("none");
   const [task, setTask] = useState([]);
+  const [selected, setSelected] = useState([]);
 
   const hideShow = () => {
     if (addBtn == "none") {
@@ -52,16 +53,19 @@ function Todolist() {
     setTask(remainingTask);
   };
 
+const editTask = (Currenttask, index) =>{
+  setSelected(Currenttask);
+  console.log(Currenttask);
+  console.log(index);
 
-
-
+};
 
 
     
   return (
     
       <div className="parent">
-      <button className="add-btn" onClick={hideShow}>
+     <button className="add-btn" onClick={hideShow}>
         +
       </button>
 
@@ -108,7 +112,9 @@ function Todolist() {
             {task
               .filter((item, i) => item.status === "completed")
               .map((item, i) => (
-                <div key={i} className="task-div"> 
+                <div key={i} 
+                   onClick={(Currenttask, index) => editTask(item, i)}
+                   className="task-div"> 
                 <button className="x-btn-2" onClick={(task) => deleteTask(item)}>X</button>
                 {item.title}
                 </div>
